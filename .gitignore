@@ -11,6 +11,9 @@
 
 # production
 /build
+/out4867
+/out8770
+/storybook-static
 
 # misc
 .DS_Store
