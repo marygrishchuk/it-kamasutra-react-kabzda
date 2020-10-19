@@ -8,7 +8,7 @@ type RatingPropsType = {
 }
 
 export function Rating(props: RatingPropsType) {
-    console.log('Rating rendering')
+    console.log('Select rendering')
 
     return (
         <div>

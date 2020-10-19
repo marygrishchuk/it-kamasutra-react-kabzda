@@ -1,33 +1,33 @@
 import React, {useState} from "react";
 
-type AccordeonPropsType = {
+type AccordionPropsType = {
     title: string,
     // collapsed: boolean
 }
 
-export function UncontrolledAccordeon(props: AccordeonPropsType) {
-    console.log('UncontrolledAccordeon rendering')
+export function UncontrolledAccordion(props: AccordionPropsType) {
+    console.log('UncontrolledAccordion rendering')
 
     let [collapsed, setCollapsed] = useState(false)
 
         return <div>
-            <AccordeonTitle title={props.title} onClick={() => {setCollapsed(!collapsed)}}/>
-            { !collapsed && <AccordeonBody/> }
+            <AccordionTitle title={props.title} onClick={() => {setCollapsed(!collapsed)}}/>
+            { !collapsed && <AccordionBody/> }
         </div>
 }//Результат !collapsed :   setCollapsed будет всегда менять значение collapsed на противоположное!
 
-type AccordeonTitlePropsType = {
+type AccordionTitlePropsType = {
     title: string
     onClick: () => void
 }
 
-function AccordeonTitle(props: AccordeonTitlePropsType) {
-    console.log('AccordeonTitle rendering')
+function AccordionTitle(props: AccordionTitlePropsType) {
+    console.log('AccordionTitle rendering')
     return <h3 onClick={() => { props.onClick() }}>-- {props.title} --</h3>
 }
 
-function AccordeonBody() {
-    console.log('AccordeonBody rendering')
+function AccordionBody() {
+    console.log('AccordionBody rendering')
     return (
         <ul>
             <li>1</li>

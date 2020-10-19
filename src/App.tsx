@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Accordeon} from "./components/Accordeon";
-import {Rating, RatingValueType} from "./components/Rating";
+import {Accordion} from "./components/Accordeon/Accordion";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
-import { UncontrolledAccordeon } from './components/UncontrolledAccordeon';
-import {UncontrolledRating} from "./components/UncontrolledRating";
+import { UncontrolledAccordion } from './components/UncontrolledAccordeon/UncontrolledAccordion';
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import { OnOff } from './components/OnOff/OnOff';
 
 
@@ -19,11 +19,11 @@ function App() {
     return (
         <div className={"App"}>
             <PageTitle title={"IT Kamasutra"} />
-            <Accordeon title={"Users"} collapsed={collapsed} onChange={() => {setCollapsed(!collapsed)} }/>
-            <UncontrolledAccordeon title={"Menu"} />
+            <Accordion title={"Users"} collapsed={collapsed} onChange={() => {setCollapsed(!collapsed)} }/>
+            <UncontrolledAccordion title={"Menu"} />
             <Rating value={ratingValue} onClick={setRatingValue}/>
             {/*onClick в этом Ratingе – это условное название для setValue*/}
-            <UncontrolledRating />
+            <UncontrolledRating/>
             <OnOff on={on} onChange={(on) => {setOn(on)}} />
             <UncontrolledOnOff onChange={setOn}/> {on.toString()}
         </div>
