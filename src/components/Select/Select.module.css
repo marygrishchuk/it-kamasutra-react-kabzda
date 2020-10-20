@@ -1,13 +1,17 @@
-.container {
-    width: 100px;
-    background-color: whitesmoke;
-    padding: 10px;
-    font-size: larger;
-    border: 1px solid gray;
-    text-align: center;
+.select span.main {
+    border: 1px solid black;
+    display: inline-block;
+    min-width: 65px;
+    min-height: 20px;
 }
 
-.item:hover {
-    background-color: lightblue;
+.items {
+    position: absolute;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.item.selected {
+    background-color: blue;
     color: white;
 }

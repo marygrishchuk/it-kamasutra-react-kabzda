@@ -1,24 +1,37 @@
 import React, {useState} from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import {Select} from './Select';
+import {action} from "@storybook/addon-actions";
 
 export default {
     title: 'Select',
     component: Select,
 };
 
-export const CustomSelect = () => {
-    const [collapsed, setCollapsed] = useState<boolean>(true)
-    const [value, setValue] = useState<any>("2")
+export const WithValue = () => {
+    const [value, setValue] = useState("2")
 
-    return <Select value={value}
-                   collapsed={collapsed}
-                   onBlur={() => setCollapsed(true)}
-                   onChange={() => setCollapsed(false)}
-                   onItemClick={() => setCollapsed(true)}
-                   onClick={setValue}
-                   items={[{title: "Dimych", value: "1"},
-                       {title: "Valera", value: "2"},
-                       {title: "Artem", value: "3"},
-                       {title: "Victor", value: "4"}]}/>;
+    return <>
+        <Select onChange={setValue}
+                value={value}
+                items={[
+                    {value: "1", title: "Minsk"},
+                    {value: "2", title: "Moscow"},
+                    {value: "3", title: "Kiev"}
+                ]}/>
+    </>
+}
+
+export const WithoutValue = () => {
+    const [value, setValue] = useState(null)
+
+    return <>
+        <Select onChange={setValue}
+                value={value}
+                items={[
+                    {value: "1", title: "Minsk"},
+                    {value: "2", title: "Moscow"},
+                    {value: "3", title: "Kiev"}
+                ]}/>
+    </>
 }
