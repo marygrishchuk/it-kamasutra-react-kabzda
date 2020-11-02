@@ -1,18 +1,17 @@
 import React, {useState} from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import {Select} from './Select';
-import {action} from "@storybook/addon-actions";
+import {SelectContainer} from './Select';
 
 export default {
-    title: 'Select',
-    component: Select,
+    title: 'SelectContainer',
+    component: SelectContainer,
 };
 
 export const WithValue = () => {
     const [value, setValue] = useState("2")
 
     return <>
-        <Select onChange={setValue}
+        <SelectContainer onChange={setValue}
                 value={value}
                 items={[
                     {value: "1", title: "Minsk"},
@@ -26,7 +25,7 @@ export const WithoutValue = () => {
     const [value, setValue] = useState(null)
 
     return <>
-        <Select onChange={setValue}
+        <SelectContainer onChange={setValue}
                 value={value}
                 items={[
                     {value: "1", title: "Minsk"},

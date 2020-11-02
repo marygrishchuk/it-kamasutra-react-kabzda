@@ -12,7 +12,7 @@ type SelectPropsType = {
     items: ItemType[]
 }
 
-export function Select(props: SelectPropsType) {
+function Select(props: SelectPropsType) {
     console.log('Select rendering')
 
     const [active, setActive] = useState<boolean>(false)
@@ -35,12 +35,12 @@ export function Select(props: SelectPropsType) {
         if (e.key === "ArrowDown" || e.key === "ArrowUp") {
             for (let i = 0; i < props.items.length; i++) {
                 if (props.items[i].value === hoveredElementValue) {
-                    const pretendentElement = e.key === "ArrowDown"
+                    const pretenderElement = e.key === "ArrowDown"
                         ? props.items[i + 1]
                         : props.items[i - 1]
 
-                    if (pretendentElement) {
-                        props.onChange(pretendentElement.value)
+                    if (pretenderElement) {
+                        props.onChange(pretenderElement.value)
                         return
                     }
                 }
@@ -59,11 +59,6 @@ export function Select(props: SelectPropsType) {
 
     return (
         <>
-            {/*<select name="" id="">*/}
-            {/*    <option value="">1</option>*/}
-            {/*    <option value="">2</option>*/}
-            {/*    <option value="">3</option>*/}
-            {/*</select>*/}
         <div className={s.select} onKeyUp={onKeyUp} tabIndex={0}>
             <span className={s.main} onClick={toggleItems}>
                 {selectedItem && selectedItem.title}
@@ -85,3 +80,4 @@ export function Select(props: SelectPropsType) {
             </>
     )
 }
+export const SelectContainer = React.memo(Select)

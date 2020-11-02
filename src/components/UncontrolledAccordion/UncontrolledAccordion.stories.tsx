@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { UncontrolledAccordion } from './UncontrolledAccordion';
+import { UncontrolledAccordionContainer } from './UncontrolledAccordion';
 
 export default {
-    title: 'UncontrolledAccordion',
-    component: UncontrolledAccordion,
+    title: 'UncontrolledAccordionContainer',
+    component: UncontrolledAccordionContainer,
 };
 
-export const AccordionMenuUncontrolled = () => <UncontrolledAccordion title={"Menu"} />
+export const AccordionMenuUncontrolled = () => <UncontrolledAccordionContainer title={"Menu"} />

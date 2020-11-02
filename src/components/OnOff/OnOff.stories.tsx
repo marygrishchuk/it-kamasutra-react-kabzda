@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import {OnOff} from './OnOff';
+import {OnOffContainer} from './OnOff';
 import {action} from "@storybook/addon-actions";
 
 export default {
-    title: 'OnOff',
-    component: OnOff,
+    title: 'OnOffContainer',
+    component: OnOffContainer,
 };
 
-export const OnMode = () => <OnOff on={true} onChange={action("on or off clicked")} />;
+export const OnMode = () => <OnOffContainer on={true} onChange={action("on or off clicked")} />;
 //{x => x} в onClickе - это заглушка
-export const OffMode = () => <OnOff on={false} onChange={action("on or off clicked")} />;
+export const OffMode = () => <OnOffContainer on={false} onChange={action("on or off clicked")} />;
 
 export const ModeChanging = () => {
     const [value, setValue] = useState<boolean>(true)
-    return <OnOff on={value} onChange={setValue} />
+    return <OnOffContainer on={value} onChange={setValue} />
 }
