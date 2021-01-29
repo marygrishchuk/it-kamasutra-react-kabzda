@@ -139,7 +139,7 @@ export const LikeUseCallback = () => {
     }, [books])
 
     const memoizedAddBook = useMemo(() => {
-        return () => {
+        return () => {          //returns a callback
             console.log(books)
             setBooks([
                 ...books,
@@ -149,7 +149,7 @@ export const LikeUseCallback = () => {
     }, [books])
 
     const memoizedAddBook2 = useCallback(() => {
-            console.log(books)
+            console.log(books)  //a callback itself
             setBooks([
                 ...books,
                 'Angular ' + new Date().getTime()
