@@ -2,7 +2,7 @@ import {Clock} from "./Clock";
 import React from "react";
 
 export default {
-    title: 'Clock',
+    title: 'ClockWithButtons',
     component: Clock,
 };
 
